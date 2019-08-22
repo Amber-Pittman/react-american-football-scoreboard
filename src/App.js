@@ -1,5 +1,5 @@
 //TODO: STEP 1 - Import the useState hook.
-import React, { useState } from "react";
+import React, { useState } from "react"; // add in useEffect when working on timer
 import "./App.css";
 import BottomRow from "./BottomRow";
 
@@ -8,6 +8,34 @@ function App() {
   // You'll need one for the home score and another for the away score.
   const [homeScore, setHomeScore] = useState(0);
   const [awayScore, setAwayScore] = useState(0);
+
+  // // Adding Countdown Timer
+  // const Timer = () => {
+  //   const [minutes, setMinutes] = useState(15);
+  //   const [isRunning, setIsRunning] = useState(true); // automatically start countdown
+
+  //   function toggle() {
+  //     setIsRunning(!isRunning);
+  //   }
+
+  //   function reset() {
+  //     setMinutes(15);
+  //     setIsRunning(true);
+  //   }
+
+  //   useEffect(() => {
+  //     let interval = null;
+  //     if (isRunning) {
+  //       interval = setInterval(() => {
+  //         setMinutes(minutes => minutes - 1); 
+  //       } 1000);
+  //     } else if (!isRunning && minutes !== 0) {
+  //       clearInterval(interval);
+  //     } 
+  //     return () => clearInterval(interval);
+  //   }, [isRunning, minutes]);
+  // }
+  
   
   return (
     <div className="container">
@@ -21,7 +49,9 @@ function App() {
 
             <div className="home__score">{homeScore}</div>
           </div>
+
           <div className="timer">00:03</div>
+          
           <div className="away">
             <h2 className="away__name">Tigers</h2>
             <div className="away__score">{awayScore}</div>
